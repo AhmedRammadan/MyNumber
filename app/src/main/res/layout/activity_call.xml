@@ -13,8 +13,10 @@
            android:id="@+id/text"
            android:inputType="number"
            android:layout_width="match_parent"
-           android:layout_height="70dp"
+           android:layout_height="100dp"
            android:layout_margin="4dp"
+           android:gravity="center"
+           android:textSize="30dp"
            android:background="@android:color/white"/>
 
 <LinearLayout
@@ -30,65 +32,45 @@
         android:gravity="center"
         android:weightSum="3"
         android:layout_margin="15dp">
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginRight="50dp">
-            <TextView
-                android:clickable="true"
+
+
+            <Button
+                android:layout_width="61dp"
+                android:layout_height="match_parent"
                 android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
+                android:clickable="true"
                 android:gravity="center"
+                android:onClick="one"
                 android:text="1"
                 android:textColor="#fff"
                 android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"
-                android:layout_marginRight="50dp"
-                android:onClick="one"/>
-        </FrameLayout>
+                android:layout_marginRight="50dp" />
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
+
+
+            <Button
                 android:clickable="true"
                 android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
+                android:layout_width="61dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="2"
                 android:onClick="Two"
                 android:textColor="#fff"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
+                android:textSize="50dp"/>
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
+
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:gravity="center"
-            android:layout_marginLeft="50dp">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:onClick="three"
-                android:text="3"
-                android:textColor="#fff"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
+            android:onClick="one"
+            android:text="3"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:layout_marginLeft="50dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_weight="1"
@@ -98,65 +80,45 @@
         android:gravity="center"
         android:weightSum="3"
         android:layout_margin="15dp">
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
+
+
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="four"
+            android:text="4"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:layout_marginRight="50dp" />
+
+
+
+        <Button
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="61dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginRight="50dp">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="4"
-                android:textColor="#fff"
-                android:onClick="four"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"
-                android:layout_marginRight="50dp"/>
-        </FrameLayout>
+            android:text="5"
+            android:onClick="five"
+            android:textColor="#fff"
+            android:textSize="50dp"/>
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="5"
-                android:onClick="five"
-                android:textColor="#fff"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:gravity="center"
-            android:layout_marginLeft="50dp">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="6"
-                android:textColor="#fff"
-                android:onClick="six"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
+            android:onClick="six"
+            android:text="6"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:layout_marginLeft="50dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_weight="1"
@@ -166,65 +128,45 @@
         android:gravity="center"
         android:weightSum="3"
         android:layout_margin="15dp">
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
+
+
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="five"
+            android:text="7"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:layout_marginRight="50dp" />
+
+
+
+        <Button
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="61dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginRight="50dp">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="7"
-                android:textColor="#fff"
-                android:onClick="Seven"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"
-                android:layout_marginRight="50dp"/>
-        </FrameLayout>
+            android:text="8"
+            android:onClick="eight"
+            android:textColor="#fff"
+            android:textSize="50dp"/>
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:onClick="eight"
-                android:text="8"
-                android:textColor="#fff"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:gravity="center"
-            android:layout_marginLeft="50dp">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="9"
-                android:onClick="nine"
-                android:textColor="#fff"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
+            android:onClick="nine"
+            android:text="9"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:layout_marginLeft="50dp" />
     </LinearLayout>
     <LinearLayout
         android:layout_weight="1"
@@ -234,65 +176,45 @@
         android:gravity="center"
         android:weightSum="3"
         android:layout_margin="15dp">
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
+
+
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="star"
+            android:text="*"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:layout_marginRight="50dp" />
+
+
+
+        <Button
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="61dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginRight="50dp">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="*"
-                android:textColor="#fff"
-                android:onClick="star"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"
-                android:layout_marginRight="50dp"/>
-        </FrameLayout>
+            android:text="0"
+            android:onClick="zero"
+            android:textColor="#fff"
+            android:textSize="50dp"/>
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="#fff"
-                android:onClick="zero"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
 
-        <FrameLayout
-            android:background="@drawable/number"
-            android:layout_width="67dp"
-            android:layout_height="wrap_content"
+        <Button
+            android:layout_width="61dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:gravity="center"
-            android:layout_marginLeft="50dp">
-            <TextView
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="67dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="#"
-                android:onClick="window"
-                android:textColor="#fff"
-                android:textSize="50dp"
-                tools:layout_editor_absoluteX="275dp"
-                tools:layout_editor_absoluteY="296dp"/>
-        </FrameLayout>
+            android:onClick="window"
+            android:text="#"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            android:layout_marginLeft="50dp" />
     </LinearLayout>
 </LinearLayout>
     <ImageView
@@ -301,12 +223,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:gravity="center"
         android:src="@drawable/ic_call"
-        android:text="5"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="186dp"
         android:onClick="call"/>
 
 
