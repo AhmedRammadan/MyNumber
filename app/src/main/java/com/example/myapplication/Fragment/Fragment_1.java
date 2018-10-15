@@ -3,9 +3,6 @@ package com.example.myapplication.Fragment;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.ClipData;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -23,7 +20,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.myapplication.Items;
-import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.adapter.ItemAdapter;
 
