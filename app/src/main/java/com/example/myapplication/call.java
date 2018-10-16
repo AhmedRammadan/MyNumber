@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 
 public class call extends AppCompatActivity {
 
-    TextView text;
+    private static TextView text;
 
-    private static final int   MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
+    private static final int   MY_PERMISSIONS_REQUEST = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class call extends AppCompatActivity {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:"+text.getText().toString()));
         startActivity(callIntent);
-    }
+}
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -48,7 +49,7 @@ public class call extends AppCompatActivity {
     public void one(View view) {
         text.setText(text.getText().toString()+"1");
     }
-    public void Two(View view) {
+    public void two(View view) {
         text.setText(text.getText().toString()+"2");
     }
     public void three(View view) {
@@ -63,7 +64,7 @@ public class call extends AppCompatActivity {
     public void six(View view) {
         text.setText(text.getText().toString()+"6");
     }
-    public void Seven(View view) {
+    public void seven(View view) {
         text.setText(text.getText().toString()+"7");
     }
     public void eight(View view) {
@@ -81,44 +82,48 @@ public class call extends AppCompatActivity {
     public void star(View view) {
         text.setText(text.getText().toString()+"*");
     }
+
     public void  checkPermission(){
-        if (ContextCompat.checkSelfPermission(call.this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED){
-            return;
-        }
-        else{
+        // Here, thisActivity is the current activity
+
+        if (ContextCompat.checkSelfPermission(call.this,Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED) {
+
             // Permission is not granted
             // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale(call.this,Manifest.permission.CALL_PHONE)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) call.this,Manifest.permission.CALL_PHONE)) {
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                Toast.makeText(call.this,"done", Toast.LENGTH_SHORT).show();
-                return;
-            }  // No explanation needed; request the permission
-            int MY_PERMISSIONS_REQUEST_READ_CONTACTS =1;
-            ActivityCompat.requestPermissions(call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+                ActivityCompat.requestPermissions((Activity) call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+            } else {
+                // No explanation needed; request the permission
+                ActivityCompat.requestPermissions((Activity) call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
 
-            // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
-            // app-defined int constant. The callback method gets the
-            // result of the request.
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
+            }
+        } else {
+            // Permission has already been granted
             return;
         }
+
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
         switch (requestCode) {
-
-            case MY_PERMISSIONS_REQUEST_READ_CONTACTS: {
+            case MY_PERMISSIONS_REQUEST: {
                 // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0
-                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (grantResults.length > 0&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
+                    Intent callIntent = new Intent(Intent.ACTION_CALL);
+                    callIntent.setData(Uri.parse("tel:"+text.getText().toString()));
+                    startActivity(callIntent);
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
+                    checkPermission();
                 }
                 return;
             }
@@ -127,5 +132,6 @@ public class call extends AppCompatActivity {
             // permissions this app might request.
         }
     }
-}
 
+
+}

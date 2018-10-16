@@ -26,91 +26,111 @@
     android:layout_weight="1">
     <LinearLayout
         android:layout_weight="1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         android:weightSum="3"
-        android:layout_margin="15dp">
-
-
-            <Button
-                android:layout_width="61dp"
-                android:layout_height="match_parent"
-                android:background="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:gravity="center"
-                android:onClick="one"
-                android:text="1"
-                android:textColor="#fff"
-                android:textSize="50dp"
-                android:layout_marginRight="50dp" />
-
-
-
-            <Button
-                android:clickable="true"
-                android:background="?android:attr/selectableItemBackground"
-                android:layout_width="61dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="2"
-                android:onClick="Two"
-                android:textColor="#fff"
-                android:textSize="50dp"/>
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        >
 
 
         <Button
-            android:layout_width="61dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:onClick="one"
+            android:text="1"
+            android:textColor="#fff"
+            android:textSize="50dp"
+
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
+
+
+
+        <Button
+            android:clickable="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="2"
+            android:onClick="two"
+            android:textColor="#fff"
+            android:paddingRight="40dp"
+            android:paddingLeft="40dp"
+            android:textSize="50dp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:gravity="center"
-            android:onClick="one"
+            android:onClick="three"
             android:text="3"
             android:textColor="#fff"
             android:textSize="50dp"
-            android:layout_marginLeft="50dp" />
+
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_weight="1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
         android:weightSum="3"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        >
 
 
         <Button
-            android:layout_width="61dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
+            android:layout_weight="1"
             android:gravity="center"
             android:onClick="four"
             android:text="4"
             android:textColor="#fff"
             android:textSize="50dp"
-            android:layout_marginRight="50dp" />
+
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
 
 
 
         <Button
             android:clickable="true"
             android:background="?android:attr/selectableItemBackground"
-            android:layout_width="61dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="5"
             android:onClick="five"
             android:textColor="#fff"
+            android:paddingRight="40dp"
+            android:paddingLeft="40dp"
             android:textSize="50dp"/>
 
 
         <Button
-            android:layout_width="61dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:gravity="center"
@@ -118,104 +138,126 @@
             android:text="6"
             android:textColor="#fff"
             android:textSize="50dp"
-            android:layout_marginLeft="50dp" />
+
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
+
     </LinearLayout>
     <LinearLayout
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:weightSum="3"
+    android:layout_margin="15dp"
+    android:layout_gravity="center"
+    >
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
         android:layout_weight="1"
+        android:gravity="center"
+        android:onClick="seven"
+        android:text="7"
+        android:textColor="#fff"
+        android:textSize="50dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
+
+
+
+    <Button
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:weightSum="3"
-        android:layout_margin="15dp">
-
-
-        <Button
-            android:layout_width="61dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center"
-            android:onClick="five"
-            android:text="7"
-            android:textColor="#fff"
-            android:textSize="50dp"
-            android:layout_marginRight="50dp" />
+        android:text="8"
+        android:onClick="eight"
+        android:textColor="#fff"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:textSize="50dp"/>
 
 
 
-        <Button
-            android:clickable="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="61dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="8"
-            android:onClick="eight"
-            android:textColor="#fff"
-            android:textSize="50dp"/>
-
-
-        <Button
-            android:layout_width="61dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center"
-            android:onClick="nine"
-            android:text="9"
-            android:textColor="#fff"
-            android:textSize="50dp"
-            android:layout_marginLeft="50dp" />
-    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="nine"
+        android:text="9"
+        android:textColor="#fff"
+        android:textSize="50dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
+</LinearLayout>
     <LinearLayout
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:weightSum="3"
+    android:layout_margin="15dp"
+    android:layout_gravity="center"
+    >
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
         android:layout_weight="1"
+        android:gravity="center"
+        android:onClick="star"
+        android:text="*"
+        android:textColor="#fff"
+        android:textSize="50dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
+
+
+
+    <Button
+        android:clickable="true"
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_weight="1"
         android:gravity="center"
-        android:weightSum="3"
-        android:layout_margin="15dp">
+        android:text="0"
+        android:onClick="zero"
+        android:textColor="#fff"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
+        android:textSize="50dp"/>
 
 
-        <Button
-            android:layout_width="61dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center"
-            android:onClick="star"
-            android:text="*"
-            android:textColor="#fff"
-            android:textSize="50dp"
-            android:layout_marginRight="50dp" />
-
-
-
-        <Button
-            android:clickable="true"
-            android:background="?android:attr/selectableItemBackground"
-            android:layout_width="61dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="0"
-            android:onClick="zero"
-            android:textColor="#fff"
-            android:textSize="50dp"/>
-
-
-        <Button
-            android:layout_width="61dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:gravity="center"
-            android:onClick="window"
-            android:text="#"
-            android:textColor="#fff"
-            android:textSize="50dp"
-            android:layout_marginLeft="50dp" />
-    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:gravity="center"
+        android:onClick="window"
+        android:text="#"
+        android:textColor="#fff"
+        android:textSize="50dp"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"/>
+</LinearLayout>
 </LinearLayout>
     <ImageView
         android:clickable="true"

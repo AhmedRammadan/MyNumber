@@ -30,7 +30,7 @@ import java.util.ArrayList;
  */
 public class Fragment_1 extends Fragment {
 
-   private static final int   MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
+   private static final int  MY_PERMISSIONS_REQUEST = 1;
    private String uri= "05616561";
     @Nullable
     @Override
@@ -56,15 +56,65 @@ public class Fragment_1 extends Fragment {
                Items item=items.get(position);
                uri = item.getNumber();
                checkPermission();
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:"+uri));
-                startActivity(callIntent);
+                if (ContextCompat.checkSelfPermission(getContext(),Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
+                    call(uri);
+                }
+
+
             }
         });
         return view;
     }
     public void  checkPermission(){
+        // Here, thisActivity is the current activity
+
+            if (ContextCompat.checkSelfPermission(getContext(),Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED) {
+
+                // Permission is not granted
+                // Should we show an explanation?
+                if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) getContext(),Manifest.permission.CALL_PHONE)) {
+                    // Show an explanation to the user *asynchronously* -- don't block
+                    // this thread waiting for the user's response! After the user
+                    // sees the explanation, try again to request the permission.
+                    ActivityCompat.requestPermissions((Activity) getContext(),new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+                } else {
+                    // No explanation needed; request the permission
+                    ActivityCompat.requestPermissions((Activity) getContext(),new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+
+                    // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                    // app-defined int constant. The callback method gets the
+                    // result of the request.
+                }
+            } else {
+                // Permission has already been granted
+                return;
+            }
 
     }
+    @Override
+    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                    call(uri);
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+                    checkPermission();
+                }
+                return;
+            }
 
+            // other 'case' lines to check for other
+            // permissions this app might request.
+        }
+    }
+    public  void call(String muri){
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:"+muri));
+            startActivity(callIntent);
+    }
 }
