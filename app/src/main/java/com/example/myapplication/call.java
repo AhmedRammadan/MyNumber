@@ -31,10 +31,14 @@ public class call extends AppCompatActivity {
     }
 
     public void call(View view) {
-        checkPermission();
-        Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:"+text.getText().toString()));
-        startActivity(callIntent);
+        if (ContextCompat.checkSelfPermission(call.this,Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(Uri.parse("tel:"+text.getText().toString()));
+            startActivity(callIntent);
+        }else {
+            checkPermission();
+        }
+
 }
 
     @Override
@@ -90,14 +94,14 @@ public class call extends AppCompatActivity {
 
             // Permission is not granted
             // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) call.this,Manifest.permission.CALL_PHONE)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale( call.this,Manifest.permission.CALL_PHONE)) {
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                ActivityCompat.requestPermissions((Activity) call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+                ActivityCompat.requestPermissions( call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
             } else {
                 // No explanation needed; request the permission
-                ActivityCompat.requestPermissions((Activity) call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+                ActivityCompat.requestPermissions( call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
 
                 // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
                 // app-defined int constant. The callback method gets the
