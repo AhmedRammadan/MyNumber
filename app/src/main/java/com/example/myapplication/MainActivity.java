@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
-        new Intent(Intent.ACTION_CALL, Uri.parse("01066727482"));
     }
 }
 

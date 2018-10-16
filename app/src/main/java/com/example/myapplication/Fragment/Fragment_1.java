@@ -55,14 +55,10 @@ public class Fragment_1 extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                Items item=items.get(position);
                uri = item.getNumber();
-
+                checkPermission();
                 if (ContextCompat.checkSelfPermission(getContext(),Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
                     call(uri);
-                }else {
-                    checkPermission();
                 }
-
-
             }
         });
         return view;

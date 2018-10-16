@@ -28,16 +28,13 @@ public class call extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         text=findViewById(R.id.text);
+        checkPermission();
     }
 
     public void call(View view) {
-        if (ContextCompat.checkSelfPermission(call.this,Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
-            Intent callIntent = new Intent(Intent.ACTION_CALL);
-            callIntent.setData(Uri.parse("tel:"+text.getText().toString()));
-            startActivity(callIntent);
-        }else {
-            checkPermission();
-        }
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:"+text.getText().toString()));
+        startActivity(callIntent);
 
 }
 
@@ -94,14 +91,14 @@ public class call extends AppCompatActivity {
 
             // Permission is not granted
             // Should we show an explanation?
-            if (ActivityCompat.shouldShowRequestPermissionRationale( call.this,Manifest.permission.CALL_PHONE)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(call.this,Manifest.permission.CALL_PHONE)) {
                 // Show an explanation to the user *asynchronously* -- don't block
                 // this thread waiting for the user's response! After the user
                 // sees the explanation, try again to request the permission.
-                ActivityCompat.requestPermissions( call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+                ActivityCompat.requestPermissions(call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
             } else {
                 // No explanation needed; request the permission
-                ActivityCompat.requestPermissions( call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
+                ActivityCompat.requestPermissions(call.this,new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST);
 
                 // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
                 // app-defined int constant. The callback method gets the
@@ -121,9 +118,7 @@ public class call extends AppCompatActivity {
                 if (grantResults.length > 0&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-                    Intent callIntent = new Intent(Intent.ACTION_CALL);
-                    callIntent.setData(Uri.parse("tel:"+text.getText().toString()));
-                    startActivity(callIntent);
+                   return;
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
@@ -135,7 +130,4 @@ public class call extends AppCompatActivity {
             // other 'case' lines to check for other
             // permissions this app might request.
         }
-    }
-
-
-}
+    }}

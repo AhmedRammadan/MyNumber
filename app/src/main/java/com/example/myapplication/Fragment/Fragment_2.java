@@ -47,8 +47,9 @@ public class Fragment_2 extends Fragment {
                 Items item=items.get(position);
                 uri = item.getNumber();
                 checkPermission();
-                call(uri);
-
+                if (ContextCompat.checkSelfPermission(getContext(),Manifest.permission.CALL_PHONE)== PackageManager.PERMISSION_GRANTED) {
+                    call(uri);
+                }
             }
         });
         return view;
